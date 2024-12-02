@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .profile-container img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .profile-container h2 {
+            margin-bottom: 10px;
+        }
+        .profile-container p {
+            text-align: left;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="<?php echo $row['photo_path'] ?: 'default-profile.png'; ?>" alt="Profile Photo">
+        <h2><?php echo $row['first_name'] . ' ' . $row['last_name']; ?></h2>
+        <p><strong>Address:</strong> <?php echo $row['address']; ?></p>
+        <p><strong>Phone Number:</strong> <?php echo $row['phone_number']; ?></p>
+        <p><strong>Email:</strong> <?php echo $row['email']; ?></p>
+    </div>
+</body>
+</html>
